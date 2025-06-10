@@ -184,7 +184,25 @@
                 width: 80px;
             }
         }
-      
+      .projects {
+            display: flex;
+            flex-direction: column;
+            
+            margin-top: 20px;
+        }
+
+        .projects a {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px 0;
+            text-decoration: none;
+        }
+
+        .projects a:active {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 
@@ -256,6 +274,11 @@
         <h2>What will you learn ?</h2>
         <a class="basicsBTN" href="basics.html">Basics</a>
         <a class="frontBTN" href="front.html">Front-End</a>
+    </section>
+    <section class="projects">
+        <h2>Projects you can do !!</h2>
+        <a href="games/game1/index.html" class="btn">Guess the number 🧐?</a>
+        <a href="games/To-do/index.html">To-Do App ✔</a>
     </section>
     <section>
         <h2>What is the difference between the two courses?</h2>
