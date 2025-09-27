@@ -7,91 +7,78 @@
     <title>Course Content</title>
     <link rel="shortcut icon" type="image/x-icon" href="cropped-code-logo-favicon.png">
     <style>
-        *{
-            box-sizing : border-box;
-            margin : 0 ;
-            padding :0;
-        }
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafd;
         }
 
         header {
             display: flex;
             align-items: center;
-            background-color: rgb(136, 136, 136);
-            color: white;
+            background-color: #3a6ea5;
+            color: #fff;
             padding: 15px;
-
-        }
-
-        .header-image img {
-            width: 100px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-            padding: 5px;
-
+            box-shadow: 0 2px 8px rgba(58, 110, 165, 0.08);
+            justify-content: space-between;
         }
 
         .header-content h1 {
-            margin-left: 20px;
-            
             text-decoration: underline;
+            color: #fff;
         }
 
         main {
             padding: 20px;
-            h2{
-                margin-bottom: 10px;
-            }
         }
 
         h2 {
-            color: #333;
+            color: #3a6ea5;
         }
 
         .courses {
             display: flex;
             justify-content: space-between;
             gap: 10px;
-
         }
 
         .course1,
         .course2 {
-            background-color: white;
+            background-color: #f0f4fa;
             padding: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 8px rgba(58, 110, 165, 0.07);
             width: 48%;
         }
 
         ul {
             list-style-type: none;
             padding-left: 0;
-
         }
-        ol{
+
+        ol {
             padding-left: 15px;
         }
+
         li {
             margin-block: 7px;
-            
             padding: 10px;
             border-radius: 5px;
-
+            background: #e9eef5;
         }
-        .content{
-            background-color: #5858583a;
+
+        .content {
+            background-color: transparent;
         }
 
         .heading {
             font-weight: bold;
-            color: #333;
+            color: #3a6ea5;
             margin-bottom: 10px;
         }
 
@@ -99,17 +86,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
-            background-color: #333;
-            color: white;
+            background-color: #3a6ea5;
+            color: #fff;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 -2px 8px rgba(58, 110, 165, 0.08);
         }
 
         footer h3,
         footer h2 {
             margin-top: 0;
-            color: white;
+            color: #fff;
             align-self: flex-start;
         }
 
@@ -127,49 +114,62 @@
             direction: rtl;
         }
 
-        a{
-
+        a {
             display: inline-block;
             margin-top: 20px;
-            
             text-decoration: none;
         }
-        .basicsBTN{
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+
+        .subscribe-btn,
+        .basicsBTN,
+        .frontBTN,
+        .projects a {
+            background-color: #ce9033 !important;
+            color: #fff;
+            padding: 13px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            text-decoration: none;
+            transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 16px rgba(255, 152, 0, 0.15);
+            font-size: 1.12em;
+            cursor: pointer;
+            margin-top: 18px;
+            margin-left: 0;
             margin-right: 10px;
+            outline: none;
+            letter-spacing: 1px;
         }
-        .frontBTN{
-            background-color: #e74c3c;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+
+        .subscribe-btn:hover,
+        .basicsBTN:hover,
+        .frontBTN:hover,
+        .projects a:hover {
+            background-color: #f57c00;
+            box-shadow: 0 6px 18px rgba(255, 152, 0, 0.18);
+            color: #fff;
         }
+
         footer p {
             margin: 5px 0;
             align-self: flex-start;
         }
-        section{
+
+        section {
             margin: 20px 0;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #f0f4fa;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            
+            box-shadow: 0 2px 8px rgba(58, 110, 165, 0.07);
         }
-        
-
-        /* we need to make responsive for small and medium sizes */
-
 
         @media (max-width: 768px) {
             .courses {
                 flex-direction: column;
                 margin-right: 10px;
             }
-            
+
             .course1,
             .course2 {
                 width: 100%;
@@ -177,93 +177,150 @@
 
             header {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+                padding: 10px;
             }
 
-            .header-image img {
-                width: 80px;
+            .header-content {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .subscribe-btn {
+                width: 100%;
+                min-width: unset;
+                font-size: 1.15em;
+                padding: 16px 0;
+                margin: 0;
+                border-radius: 10px;
             }
         }
-      .projects {
+
+        @media (max-width: 900px) {
+            header .subscribe-btn {
+                display: none !important;
+            }
+        }
+
+        .projects {
             display: flex;
             flex-direction: column;
-            
             margin-top: 20px;
         }
 
         .projects a {
-            background-color: #3498db;
-            color: white;
+            background-color: #5fa8d3;
+            color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             margin: 5px 0;
             text-decoration: none;
+            transition: background 0.2s;
+            border: none;
         }
 
-        .projects a:active {
-            background-color: #2980b9;
+        .projects a:active,
+        .projects a:hover {
+            background-color: #3a6ea5;
         }
-        
+
+        .subscribe-btn {
+            background-color: #5fa8d3;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: auto;
+            text-decoration: none;
+            transition: background 0.2s;
+            border: none;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #3a6ea5;
+        }
+
+        .subscribe-section .subscribe-btn {
+            background-color: #25d366 !important;
+            color: #fff;
+            padding: 13px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            text-decoration: none;
+            transition: box-shadow 0.2s, background 0.2s;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.15);
+            font-size: 1.12em;
+            cursor: pointer;
+            margin-top: 18px;
+            margin-left: 0;
+            margin-right: 10px;
+            outline: none;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .subscribe-section .subscribe-btn:hover {
+            background-color: #128c7e !important;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.18);
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="header-image">
-            <img src="b8ddb3b9-fb3f-4f98-ae4c-5a16eb0887b9 (1).jfif" alt="image for me">
-        </div>
         <div class="header-content">
-            <h1>Mohamed Haithem</h1>
+            <h1>Mohamed Haithem 🚀</h1>
         </div>
+        <a href="https://wa.me/201282020762" target="_blank" class="subscribe-btn">Subscribe</a>
     </header>
     <main>
-        <h2>Course Order :</h2>
+        <h2 style="margin-bottom: 20px; color: black; font-weight: 700; font-size: 32px;">Course Order 📚 :</h2>
         <div class="courses">
             <div class="course1">
-                <h3>Programming Basics (4 Months) :</h3>
+                <h3>Programming Basics (4 Months) 💻 :</h3>
                 <ul>
-                    <li class="heading">C++ Basics (2 months):
+                    <li class="heading">C++ Basics (2 months) 🧑‍💻:
                         <ol>
-                            <li class="content">Introduction to C++</li>
-                            <li class="content">Variables and Data Types</li>
-                            <li class="content">Loops</li>
-                            <li class="content">Arrays and 2D Arrays</li>
-                            <li class="content">Objects</li>
-                            <li class="content">Functions</li>
-                            <li class="content">Conditional Statements</li>
-                            <li class="content">OOP (Object Oriented)</li>
+                            <li class="content">Introduction to C++ 👋</li>
+                            <li class="content">Variables and Data Types 🔢</li>
+                            <li class="content">Loops 🔁</li>
+                            <li class="content">Arrays and 2D Arrays 🗂️</li>
+                            <li class="content">Objects 🧩</li>
+                            <li class="content">Functions 🛠️</li>
+                            <li class="content">Conditional Statements ❓</li>
+                            <li class="content">OOP (Object Oriented) 🏗️</li>
                         </ol>
                     </li>
-                    <li class="heading">Basics Advanced (2 months):
+                    <li class="heading">Basics Advanced (2 months) 🚀:
                         <ol>
-                            <li class="content">Data Structure &amp; Algorithms</li>
+                            <li class="content">Data Structure &amp; Algorithms 🧮</li>
                         </ol>
                     </li>
                 </ul>
             </div>
             <div class="course2">
-                <h3>Front-End Web Development (6 Months) :</h3>
+                <h3>Front-End Web Development (6 Months) 🌐 :</h3>
                 <ul>
-                    <li class="heading">Front-End Level-0 (2 months):
+                    <li class="heading">Front-End Level-0 (2 months) 🏁:
                         <ol>
-                            <li class="content">HTML 5</li>
-                            <li class="content">CSS</li>
-                            <li class="content">Bootstrap frameWork</li>
-                            <li class="content">Responsive web Designs</li>
+                            <li class="content">HTML 5 📝</li>
+                            <li class="content">CSS 🎨</li>
+                            <li class="content">Bootstrap frameWork 🅱️</li>
+                            <li class="content">Responsive web Designs 📱</li>
                         </ol>
                     </li>
-                    <li class="heading">Front-End Level-1 (2 months) :
+                    <li class="heading">Front-End Level-1 (2 months) ⚡:
                         <ol>
-                            <li class="content">JS (JavaScript)</li>
-
-                            <li class="content">DOM &amp; Events </li>
-                            <li class="content">OOP (Object Oriented)</li>
+                            <li class="content">JS (JavaScript) ✨</li>
+                            <li class="content">DOM &amp; Events 🧠</li>
+                            <li class="content">OOP (Object Oriented) 🏗️</li>
                         </ol>
                     </li>
-                    <li class="heading">Front-End Level-2 (2 months) :
+                    <li class="heading">Front-End Level-2 (2 months) 🥇:
                         <ol>
-                            <li class="content">React Library (Using Vite)</li>
-                            <li class="content">Tailwind frameWork</li>
+                            <li class="content">React Library (Using Vite) ⚛️</li>
+                            <li class="content">Tailwind frameWork 🦋</li>
                         </ol>
                     </li>
                 </ul>
@@ -271,55 +328,63 @@
         </div>
 
     </main>
-    <section class="what-will-you-learn">
-        <h2>What will you learn ?</h2>
-        <a class="basicsBTN" href="basics.html">Basics</a>
-        <a class="frontBTN" href="front.html">Front-End</a>
-    </section>
+    <!-- <section class="what-will-you-learn">
+        <h2>What will you learn? 🤔</h2>
+        <a class="basicsBTN" href="basics.html">Basics 🧑‍💻</a>
+        <a class="frontBTN" href="front.html">Front-End 🌐</a>
+    </section> -->
     <section class="projects">
-        <h2>Projects you can do !!</h2>
+        <h2>Projects you can do !! 🏆</h2>
         <a href="https://mohamed-1-9.github.io/Guess/" class="btn">Guess the number 🧐?</a>
-        <a href="https://mohamed-1-9.github.io/to-do/">To-Do App ✔</a>
-        <a href="https://mohamed-1-9.github.io/Bakery/">Bakery</a>
+        <a href="https://mohamed-1-9.github.io/to-do/">To-Do App ✔️</a>
+        <a href="https://mohamed-1-9.github.io/Bakery/">Bakery 🥐</a>
     </section>
     <section>
-        <h2>What is the difference between the two courses?</h2>
+        <h2>What is the difference between the two courses? 🤷‍♂️</h2>
         <p class="en">
             The first course focuses on C++ programming, covering the basics and advanced topics like data structures and
             algorithms. The second course is about front-end web development, starting from HTML and CSS to advanced
             topics like React and Tailwind.
         </p>
-        <p class="en">You can take each level separately.</p>
+        <p class="en">You can take each level separately. 🪜</p>
         <p class="ar">
-            ما الفرق بين الدورتين؟
+            ما الفرق بين الدورتين؟ 🤔
             <br>
             تركز الدورة الأولى على برمجة C++، حيث تغطي الأساسيات والمواضيع المتقدمة مثل هياكل البيانات والخوارزميات.
             بينما تركز الدورة الثانية على تطوير الويب من جهة العميل، بدءًا من HTML وCSS إلى مواضيع متقدمة مثل React وTailwind.
         </p>
-        <p class="ar">يمكنك أخذ كل مستوى على حدة.</p>
+        <p class="ar">يمكنك أخذ كل مستوى على حدة. 🪜</p>
+    </section>
+    <section class="subscribe-section">
+        <h2 style="color:#3a6ea5;">Subscribe Now</h2>
+        <p>
+            You can enroll in the course by contacting us on WhatsApp.<br>
+            <strong>Course Details:</strong><br>
+            - Suitable for ages 12 and up.<br>
+            - Programming Basics Course Duration: 4 months (C++).<br>
+            - Front-End Web Development Course Duration: 6 months.<br>
+            - Two online sessions per week (lesson + review & assignments).<br>
+            - All sessions are recorded and available for review anytime.<br>
+            - Assignments are given and corrected regularly.<br>
+            - Support and communication available throughout the course.
+        </p>
+        <a href="https://wa.me/201282020762" target="_blank" class="subscribe-btn">Subscribe WhatsApp</a>
     </section>
     <footer>
-        <h3>Details :</h3>
+        <h3>Details 📝:</h3>
         <p class="en">
-            These two courses are designed for ages 12 and up to establish the fundamentals of C++ programming and front-end web development.
-
-The course consists of two weekly online sessions: the first provides instruction, and the second provides a review of the previous lecture and assignments.
-
-Assignments will be distributed to students, and they must complete and submit them by the deadline. These assignments will be reviewed and graded.
-
-All lectures will be recorded for students to review.
-
+            These two courses are designed for ages 12 and up to establish the fundamentals of C++ programming and front-end web development.<br>
+            The course consists of two weekly online sessions: the first provides instruction, and the second provides a review of the previous lecture and assignments.<br>
+            Assignments will be distributed to students, and they must complete and submit them by the deadline. These assignments will be reviewed and graded.<br>
+            All lectures will be recorded for students to review. 🎥
         </p>
         <p class="ar">
-            صُممت هاتان الدورتان للأعمار من ١٢ عامًا فما فوق لتأسيس أساسيات برمجة C++ وتطوير واجهات الويب الأمامية.
-
-تتكون الدورة من جلستين أسبوعيتين عبر الانترنت الاولى يتم الشرح فيها و الثانيه يتم فيها مراجعه ما تم شرحه في المحاضره السابقه وحل الواجبات  
-
-سيتم توزيع الواجبات على الطلاب، ويجب عليهم إكمالها وتسليمها قبل الموعد النهائي. ستتم مراجعة هذه الواجبات وتصحيحها.
-
-ستُسجل جميع المحاضرات ليتمكن الطلاب من مراجعتها.
+            صُممت هاتان الدورتان للأعمار من ١٢ عامًا فما فوق لتأسيس أساسيات برمجة C++ وتطوير واجهات الويب الأمامية.<br>
+            تتكون الدورة من جلستين أسبوعيتين عبر الانترنت الاولى يتم الشرح فيها و الثانيه يتم فيها مراجعه ما تم شرحه في المحاضره السابقه وحل الواجبات  <br>
+            سيتم توزيع الواجبات على الطلاب، ويجب عليهم إكمالها وتسليمها قبل الموعد النهائي. ستتم مراجعة هذه الواجبات وتصحيحها.<br>
+            ستُسجل جميع المحاضرات ليتمكن الطلاب من مراجعتها. 🎥
         </p>
-        <p>Contact : 0128 2020 762</p>
+        <p>Contact : 0128 2020 762 📞</p>
     </footer>
 </body>
 
